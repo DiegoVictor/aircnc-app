@@ -1,13 +1,13 @@
 # About
 This app permit users to booking spots from companies to specified date, be notified when the request is approved or rejected and see all requests made and its current status<br /><br />
-<img src="https://raw.githubusercontent.com/DiegoVictor/omnistack-9/master/app/screenshots/dashboard.jpg" width="24%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/omnistack-9/master/app/screenshots/book.jpg" width="24%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/omnistack-9/master/app/screenshots/calendar.jpg" width="24%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/omnistack-9/master/app/screenshots/booked.jpg" width="24%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/omnistack-9/master/app/screenshots/approved.jpg" width="24%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/omnistack-9/master/app/screenshots/bookings.jpg" width="24%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/omnistack-9/master/app/screenshots/canceled.jpg" width="24%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/omnistack-9/master/app/screenshots/login.jpg" width="24%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/dashboard.jpg" width="24%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/book.jpg" width="24%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/calendar.jpg" width="24%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/booked.jpg" width="24%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/approved.jpg" width="24%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/bookings.jpg" width="24%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/canceled.jpg" width="24%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/login.jpg" width="24%" />
 
 # OS
 This app was tested only with Android through USB connection, is strongly recommended to use the same operational system, but of course you can use an emulator or a real device connected through wifi or USB.
