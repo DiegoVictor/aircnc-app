@@ -1,7 +1,7 @@
 import io from 'socket.io-client';
-import { API_URL } from 'react-native-dotenv';
+import { SOCKET_URL } from 'react-native-dotenv';
 
-const socket = io(API_URL, {
+const socket = io(SOCKET_URL, {
   autoConnect: false,
 });
 
@@ -13,9 +13,8 @@ export function connect(query) {
 }
 
 export function disconnect() {
-  if (socket.connected) {
-    socket.disconnect();
-  }
+  socket.removeAllListeners();
+  socket.disconnect();
 }
 
 export function subscribe(event, callback) {
