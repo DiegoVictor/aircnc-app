@@ -28,6 +28,10 @@ export const Input = styled.TextInput`
   margin-bottom: 20px;
 `;
 
+export const Error = styled.Text`
+  color: #f05a5b;
+`;
+
 export const Button = styled.TouchableOpacity`
   align-items: center;
   border-radius: 2px;
