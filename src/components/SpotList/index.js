@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView, View } from 'react-native';
 import PropTypes from 'prop-types';
-import AsyncStorage from '@react-native-community/async-storage';
 
 import api from '~/services/api';
 import {
