@@ -39,6 +39,7 @@ export default () => {
 
       await AsyncStorage.setItem('aircnc_user', JSON.stringify({ token, _id }));
       await AsyncStorage.setItem('aircnc_techs', techs);
+      setAuthorization(token);
 
       navigate('App', { screen: 'List' });
     } catch (err) {
@@ -60,6 +61,7 @@ export default () => {
     (async () => {
       const user = JSON.parse(await AsyncStorage.getItem('aircnc_user'));
       if (user) {
+        setAuthorization(user.token);
         navigate('App', { screen: 'List' });
       }
     })();
