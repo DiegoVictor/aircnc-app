@@ -28,11 +28,8 @@ export default function SpotList({ tech, ...props }) {
 
   useEffect(() => {
     (async () => {
-      const { token } = JSON.parse(await AsyncStorage.getItem('aircnc_user'));
-
       const { data } = await api.get('spots', {
         params: { tech },
-        headers: { Authorization: `Bearer ${token}` },
       });
 
       setSpots(data);
