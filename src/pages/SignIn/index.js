@@ -14,6 +14,13 @@ import {
   WhiteText,
 } from './styles';
 
+const schema = Yup.object().shape({
+  email: Yup.string()
+    .email('Digite um email valido')
+    .required('Campo obrigatório'),
+  techs: Yup.string().required('Campo obrigatório'),
+});
+
 export default () => {
   const { navigate } = useNavigation();
   const [email, setEmail] = useState('');
