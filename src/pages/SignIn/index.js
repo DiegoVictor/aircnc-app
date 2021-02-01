@@ -4,13 +4,21 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
 import Logo from '~/assets/logo.png';
-import api from '~/services/api';
-import { Container, Form, Label, Input, Button, WhiteText } from './styles';
+import {
+  Container,
+  Form,
+  Label,
+  Input,
+  Error,
+  Button,
+  WhiteText,
+} from './styles';
 
 export default () => {
   const { navigate } = useNavigation();
   const [email, setEmail] = useState('');
   const [techs, setTechs] = useState('');
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = useCallback(() => {
     (async () => {
@@ -51,6 +59,7 @@ export default () => {
           value={email}
           onChangeText={setEmail}
         />
+        {errors.email && <Error>{errors.email}</Error>}
 
         <Label>TECNOLOGIAS *</Label>
         <Input
@@ -61,6 +70,7 @@ export default () => {
           value={techs}
           onChangeText={setTechs}
         />
+        {errors.techs && <Error>{errors.techs}</Error>}
 
         <Button testID="submit" onPress={handleSubmit}>
           <WhiteText>Encontrar spots</WhiteText>
