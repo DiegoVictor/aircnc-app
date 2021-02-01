@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import PropTypes from 'prop-types';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -38,6 +38,10 @@ export default function SpotList({ tech, ...props }) {
       setSpots(data);
     })();
   }, [tech]);
+
+  if (spots.length === 0) {
+    return <View />;
+  }
 
   return (
     <Container {...props}>
