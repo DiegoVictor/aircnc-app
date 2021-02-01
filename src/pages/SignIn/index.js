@@ -41,7 +41,19 @@ export default () => {
       await AsyncStorage.setItem('aircnc_techs', techs);
 
       navigate('App', { screen: 'List' });
-    })();
+    } catch (err) {
+      if (err instanceof Yup.ValidationError) {
+        const validation = {};
+
+        err.inner.forEach(error => {
+          validation[error.path] = error.message;
+        });
+
+        setErrors(validation);
+      } else {
+        Alert.alert('Ops! Alguma coisa deu errado, tente novamente!');
+      }
+    }
   }, [email, techs]);
 
   useEffect(() => {
