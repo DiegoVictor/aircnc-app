@@ -30,12 +30,7 @@ export default () => {
   const [bookings, setBookings] = useState([]);
   const [refreshing, setRefreshing] = useState(true);
 
-  const handleRefresh = useCallback(() => {
-    (async () => {
-      const { token } = JSON.parse(await AsyncStorage.getItem('aircnc_user'));
-      const { data } = await api.get('bookings', {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+  const handleRefresh = useCallback(async () => {
 
       setBookings(data);
       setRefreshing(false);
@@ -62,8 +57,9 @@ export default () => {
           'Ops! Não foi possivel cancelar a reserva, tente novamente!'
         );
       }
-    })();
-  });
+    },
+    [bookings]
+  );
 
   useEffect(() => {
     (async () => {
