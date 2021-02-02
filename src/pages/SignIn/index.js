@@ -29,8 +29,11 @@ export default () => {
   const [techs, setTechs] = useState('');
   const [errors, setErrors] = useState({});
 
-  const handleSubmit = useCallback(() => {
-    (async () => {
+  const handleSubmit = useCallback(async () => {
+    try {
+      setErrors({});
+      await schema.validate({ email, techs }, { abortEarly: false });
+
       const { data } = await api.post('sessions', { email });
       const {
         token,
