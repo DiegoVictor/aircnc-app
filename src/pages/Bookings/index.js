@@ -58,8 +58,9 @@ export default () => {
         setBookings(bookings.filter(booking => booking._id !== id));
         Alert.alert('Reserva cancelada');
       } catch (err) {
-        const { error } = err.response.data;
-        Alert.alert(error);
+        Alert.alert(
+          'Ops! Não foi possivel cancelar a reserva, tente novamente!'
+        );
       }
     })();
   });
