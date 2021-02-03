@@ -72,12 +72,4 @@ export default function Book({ route }) {
       </Cancel>
     </Container>
   );
-}
-
-Book.propTypes = {
-  route: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
 };
