@@ -31,11 +31,11 @@ export default () => {
   const [refreshing, setRefreshing] = useState(true);
 
   const handleRefresh = useCallback(async () => {
+    const { data } = await api.get('bookings');
 
-      setBookings(data);
-      setRefreshing(false);
-    })();
-  });
+    setBookings(data);
+    setRefreshing(false);
+  }, []);
 
   const handleCancelation = useCallback(id => {
     (async () => {
