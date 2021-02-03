@@ -37,18 +37,10 @@ export default () => {
     setRefreshing(false);
   }, []);
 
-  const handleCancelation = useCallback(id => {
-    (async () => {
-      const { token } = JSON.parse(await AsyncStorage.getItem('aircnc_user'));
-
+  const handleCancelation = useCallback(
+    async id => {
       try {
-        await api.post(
-          `bookings/${id}/rejection`,
-          {},
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
+        await api.post(`bookings/${id}/rejection`);
 
         setBookings(bookings.filter(booking => booking._id !== id));
         Alert.alert('Reserva cancelada');
