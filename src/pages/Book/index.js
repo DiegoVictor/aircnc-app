@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Alert } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { addDays, format } from 'date-fns';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
 import api from '~/services/api';
@@ -9,6 +10,7 @@ import { Container, Label, Input, Button, WhiteText, Cancel } from './styles';
 export default () => {
   const route = useRoute();
   const { navigate } = useNavigation();
+  const [date, setDate] = useState(addDays(new Date(), 1));
   const [showDatepicker, setShowDatepicker] = useState(false);
   const { id } = route.params;
 
