@@ -9,8 +9,7 @@ import { Container, Label, Input, Button, WhiteText, Cancel } from './styles';
 
 export default () => {
   const { navigate } = useNavigation();
-  const [date, setDate] = useState(new Date());
-  const [show_datepicker, setShowDatepicker] = useState(false);
+  const [showDatepicker, setShowDatepicker] = useState(false);
   const { id } = route.params;
 
   const handleSubmit = useCallback(() => {
@@ -38,7 +37,7 @@ export default () => {
   return (
     <Container>
       <Label>DATA DE INTERESSE *</Label>
-      {show_datepicker && (
+      {showDatepicker && (
         <DateTimePicker
           testID="datepicker"
           mode="date"
