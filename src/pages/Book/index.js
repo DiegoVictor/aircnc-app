@@ -43,8 +43,7 @@ export default () => {
           testID="datepicker"
           mode="date"
           value={date}
-          onChange={(event, selected_date) => {
-            setDate(selected_date);
+          minimumDate={addDays(new Date(), 1)}
             setShowDatepicker(false);
           }}
         />
