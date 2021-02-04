@@ -7,6 +7,7 @@ import api from '~/services/api';
 import { Container, Label, Input, Button, WhiteText, Cancel } from './styles';
 
 export default () => {
+  const route = useRoute();
   const { navigate } = useNavigation();
   const [showDatepicker, setShowDatepicker] = useState(false);
   const { id } = route.params;
