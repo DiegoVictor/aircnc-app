@@ -44,7 +44,11 @@ export default () => {
           mode="date"
           value={date}
           minimumDate={addDays(new Date(), 1)}
+          onChange={(_, selectedDate) => {
             setShowDatepicker(false);
+            if (selectedDate) {
+              setDate(selectedDate);
+            }
           }}
         />
       )}
