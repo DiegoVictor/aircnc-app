@@ -14,22 +14,17 @@ export default () => {
   const [showDatepicker, setShowDatepicker] = useState(false);
   const { id } = route.params;
 
-  const handleSubmit = useCallback(() => {
-    (async () => {
-      const { token } = JSON.parse(await AsyncStorage.getItem('aircnc_user'));
-      await api.post(
-        `spots/${id}/booking`,
-        {
-          date,
-        },
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+  const handleSubmit = useCallback(async () => {
+    try {
+      await api.post(`spots/${id}/booking`, {
+        date,
+      });
 
       Alert.alert('Solicitação de reserva enviada');
       navigate('List');
-    })();
+    } catch (err) {
+      Alert.alert('Ops! Alguma coisa deu errado, tente novamente!');
+    }
   }, [date]);
 
   const handleCancel = useCallback(() => {
