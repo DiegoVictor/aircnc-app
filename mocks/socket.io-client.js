@@ -12,6 +12,7 @@ export default (url, options) => ({
   options,
   on,
   disconnect: jest.fn(),
+  removeAllListeners: jest.fn(),
   connect: jest.fn(),
   io: {
     opts: {
