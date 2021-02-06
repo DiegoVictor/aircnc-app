@@ -9,7 +9,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/DiegoVictor/aircnc-app/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-This app permit users to book spots from companies to a specified date, be notified when the request is approved or rejected and see all book requests made and its current status. All the resources used by this application comes from its [`API`](https://github.com/DiegoVictor/aircnc-api).
+This app allows to users to book spots from companies to a specified date, be notified when the request is approved or rejected and see all book requests made and its current status. All the resources used by this application comes from its [`API`](https://github.com/DiegoVictor/aircnc-api).
 
 ## Table of Contents
 * [Screenshots](#screenshots)
@@ -24,15 +24,15 @@ This app permit users to book spots from companies to a specified date, be notif
 
 # Screenshots
 Click to expand.<br>
-<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/signin.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/list.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/book.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/calendar.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/booked.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/bookings.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/canceled.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/approved.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/rejected.jpg" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/signin.png" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/list.png" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/book.png" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/calendar.png" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/booked.png" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/bookings.png" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/canceled.png" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/approved.png" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/aircnc-app/master/screenshots/rejected.png" width="32%" />
 
 # Installing
 Easy peasy lemon squeezy:
