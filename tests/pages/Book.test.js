@@ -5,33 +5,35 @@ import AsyncStorage from '@react-native-community/async-storage';
 import MockAdapter from 'axios-mock-adapter';
 import faker from 'faker';
 import { create } from 'react-test-renderer';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 import api from '~/services/api';
 import Book from '~/pages/Book';
 
-const _id = faker.random.uuid();
-const api_mock = new MockAdapter(api);
-const navigate = jest.fn();
-
 jest.mock('@react-navigation/native');
-useNavigation.mockReturnValue({ navigate });
 
 describe('Book page', () => {
+  const _id = faker.random.uuid();
+  const apiMock = new MockAdapter(api);
+
   it('should be able to book a spot', async () => {
     const date = faker.date.future();
 
     await AsyncStorage.setItem('aircnc_user', JSON.stringify({ _id }));
-    api_mock.onPost(`spots/${_id}/booking`).reply(({ data }) => {
+    apiMock.onPost(`spots/${_id}/booking`).reply(({ data }) => {
       const { date: received_date } = JSON.parse(data);
       expect(received_date).toBe(date.toISOString());
       return [200, {}];
     });
-    Alert.alert = jest.fn();
+
+    const alert = jest.spyOn(Alert, 'alert');
+    const navigate = jest.fn();
+    useNavigation.mockReturnValue({ navigate });
+    useRoute.mockReturnValue({ params: { id: _id } });
 
     let root;
     await act(async () => {
-      root = create(<Book route={{ params: { id: _id } }} />);
+      root = create(<Book />);
     });
 
     await act(async () => {
@@ -53,14 +55,39 @@ describe('Book page', () => {
       fireEvent.press(root.root.findByProps({ testID: 'submit' }));
     });
 
-    expect(Alert.alert).toHaveBeenCalledWith('Solicitação de reserva enviada');
+    expect(alert).toHaveBeenCalledWith('Solicitação de reserva enviada');
     expect(navigate).toHaveBeenCalledWith('List');
   });
 
+  it('should not be able to book a spot with network error', async () => {
+    await AsyncStorage.setItem('aircnc_user', JSON.stringify({ _id }));
+    apiMock.onPost(`spots/${_id}/booking`).reply(400);
+
+    const alert = jest.spyOn(Alert, 'alert');
+    const navigate = jest.fn();
+    useNavigation.mockReturnValue({ navigate });
+    useRoute.mockReturnValue({ params: { id: _id } });
+
+    const { getByTestId } = render(<Book />);
+
+    await act(async () => {
+      fireEvent.press(getByTestId('submit'));
+    });
+
+    expect(alert).toHaveBeenCalledWith(
+      'Ops! Alguma coisa deu errado, tente novamente!'
+    );
+    expect(navigate).not.toHaveBeenCalledWith('List');
+  });
+
   it('should be able to back to List', async () => {
+    const navigate = jest.fn();
+    useNavigation.mockReturnValue({ navigate });
+    useRoute.mockReturnValue({ params: { id: _id } });
+
     await AsyncStorage.setItem('aircnc_user', JSON.stringify({ _id }));
 
-    const { getByTestId } = render(<Book route={{ params: { id: _id } }} />);
+    const { getByTestId } = render(<Book />);
 
     await act(async () => {
       fireEvent.press(getByTestId('cancel'));

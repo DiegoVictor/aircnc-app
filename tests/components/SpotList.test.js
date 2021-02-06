@@ -7,17 +7,15 @@ import { create } from 'react-test-renderer';
 import { useNavigation } from '@react-navigation/native';
 
 import api from '~/services/api';
-import factory from '../utils/factories';
+import factory from '../utils/factory';
 import SpotList from '~/components/SpotList';
 
-const token = faker.random.uuid();
-const api_mock = new MockAdapter(api);
-const navigate = jest.fn();
-
 jest.mock('@react-navigation/native');
-useNavigation.mockReturnValue({ navigate });
 
 describe('SpotList component', () => {
+  const token = faker.random.uuid();
+  const apiMock = new MockAdapter(api);
+
   it('should be able to see spot list', async () => {
     const tech = faker.random.word();
     const [spot, ...rest] = await factory.attrsMany('Spot', 3, {
@@ -25,7 +23,10 @@ describe('SpotList component', () => {
     });
 
     await AsyncStorage.setItem('aircnc_user', JSON.stringify({ token }));
-    api_mock.onGet('/spots', { params: { tech } }).reply(200, [spot, ...rest]);
+    apiMock.onGet('/spots', { params: { tech } }).reply(200, [spot, ...rest]);
+
+    const navigate = jest.fn();
+    useNavigation.mockReturnValue({ navigate });
 
     let root;
     await act(async () => {
@@ -50,9 +51,13 @@ describe('SpotList component', () => {
     const tech = faker.random.word();
     const [spot, ...rest] = await factory.attrsMany('Spot', 3, {
       techs: [tech],
+      price: null,
     });
 
-    api_mock.onGet('spots', { params: { tech } }).reply(200, [spot, ...rest]);
+    apiMock.onGet('spots', { params: { tech } }).reply(200, [spot, ...rest]);
+
+    const navigate = jest.fn();
+    useNavigation.mockReturnValue({ navigate });
 
     let root;
     await act(async () => {
