@@ -8,6 +8,7 @@ jobs:
       name: node/default
     steps:
       - checkout
+      - run: cp .env.example .env
       - run: npm install
       - run: npm test
       - codecov/upload:
