@@ -7,24 +7,6 @@
     "start": "react-native start",
     "test": "jest"
   },
-  "jest": {
-    "preset": "react-native",
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-native/extend-expect",
-      "./__tests__/setup.js"
-    ],
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src/components/**/*.js"
-    ],
-    "coverageDirectory": "__tests__/coverage",
-    "moduleNameMapper": {
-      "^~/(.*)": "<rootDir>/src/$1"
-    },
-    "testMatch": [
-      "**/__tests__/**/*.test.js"
-    ]
-  },
   "dependencies": {
     "@react-native-community/async-storage": "^1.8.0",
     "@react-native-community/datetimepicker": "^2.2.2",
