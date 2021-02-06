@@ -7,8 +7,9 @@ import MockAdapter from 'axios-mock-adapter';
 import { format, parseISO } from 'date-fns';
 import { create } from 'react-test-renderer';
 import { useNavigation } from '@react-navigation/native';
+// import { waitFor, act, render } from '@testing-library/react-native';
 
-import { emit } from '../../mocks/socket.io-client';
+import { emit, subscribe } from '../../mocks/socket.io-client';
 import api from '~/services/api';
 import factory from '../utils/factory';
 import List from '~/pages/List';
@@ -40,7 +41,7 @@ describe('List page', () => {
       create(<List />);
     });
 
-    emit(booking);
+    emit('booking_response', booking);
 
     const date = format(parseISO(booking.date), "dd'/'MM'/'yyyy");
     expect(alert).toHaveBeenCalledWith(
@@ -68,7 +69,7 @@ describe('List page', () => {
       create(<List />);
     });
 
-    emit(booking);
+    emit('booking_response', booking);
 
     const date = format(parseISO(booking.date), "dd'/'MM'/'yyyy");
     expect(alert).toHaveBeenCalledWith(

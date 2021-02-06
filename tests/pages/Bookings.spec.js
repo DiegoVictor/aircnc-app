@@ -125,7 +125,7 @@ describe('Bookings page', () => {
     await act(async () => {
       create(<Bookings />);
     });
-    emit(booking);
+    emit('booking_response', booking);
 
     const date = format(parseISO(booking.date), "dd'/'MM'/'yyyy");
     expect(alert).toHaveBeenCalledWith(
@@ -150,7 +150,7 @@ describe('Bookings page', () => {
     await act(async () => {
       create(<Bookings />);
     });
-    emit(booking);
+    emit('booking_response', booking);
 
     const date = format(parseISO(booking.date), "dd'/'MM'/'yyyy");
     expect(alert).toHaveBeenCalledWith(
