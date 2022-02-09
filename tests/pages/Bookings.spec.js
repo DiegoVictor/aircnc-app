@@ -15,7 +15,7 @@ import Bookings from '~/pages/Bookings';
 
 describe('Bookings page', () => {
   const apiMock = new MockAdapter(api);
-  const _id = faker.random.number();
+  const _id = faker.datatype.number();
 
   it('should be able to see bookings', async () => {
     const spots = await factory.attrsMany('Spot', 3);
@@ -31,9 +31,9 @@ describe('Bookings page', () => {
 
     const nodes = root.root
       .findAllByType('Text')
-      .map(node => node.children.shift());
+      .map((node) => node.children.shift());
 
-    [booking, ...rest].forEach(b => {
+    [booking, ...rest].forEach((b) => {
       expect(
         root.root.findByProps({ testID: `booking_status_${b._id}` })
       ).toHaveTextContent(b.approved ? 'Aprovado' : 'Em aprovação');

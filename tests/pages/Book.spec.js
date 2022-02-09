@@ -13,7 +13,7 @@ import Book from '~/pages/Book';
 jest.mock('@react-navigation/native');
 
 describe('Book page', () => {
-  const _id = faker.random.uuid();
+  const _id = faker.datatype.uuid();
   const apiMock = new MockAdapter(api);
 
   it('should be able to book a spot', async () => {

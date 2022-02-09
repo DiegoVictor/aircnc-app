@@ -13,7 +13,7 @@ import SpotList from '~/components/SpotList';
 jest.mock('@react-navigation/native');
 
 describe('SpotList component', () => {
-  const token = faker.random.uuid();
+  const token = faker.datatype.uuid();
   const apiMock = new MockAdapter(api);
 
   it('should be able to see spot list', async () => {
@@ -35,9 +35,9 @@ describe('SpotList component', () => {
 
     const nodes = root.root
       .findAllByType('Text')
-      .map(node => node.children.shift());
+      .map((node) => node.children.shift());
 
-    [spot, ...rest].forEach(s => {
+    [spot, ...rest].forEach((s) => {
       expect(root.root.findByProps({ testID: `spot_${s._id}` })).toBeTruthy();
 
       expect(nodes.includes(s.company)).toBeTruthy();

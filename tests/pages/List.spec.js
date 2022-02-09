@@ -7,7 +7,6 @@ import MockAdapter from 'axios-mock-adapter';
 import { format, parseISO } from 'date-fns';
 import { create } from 'react-test-renderer';
 import { useNavigation } from '@react-navigation/native';
-// import { waitFor, act, render } from '@testing-library/react-native';
 
 import { emit, subscribe } from '../../mocks/socket.io-client';
 import api from '~/services/api';
@@ -17,8 +16,8 @@ import List from '~/pages/List';
 jest.mock('@react-navigation/native');
 
 describe('List page', () => {
-  const _id = faker.random.number();
-  const token = faker.random.uuid();
+  const _id = faker.datatype.number();
+  const token = faker.datatype.uuid();
   const apiMock = new MockAdapter(api);
 
   it('should be able to receive a booking confirmation', async () => {

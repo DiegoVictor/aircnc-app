@@ -13,8 +13,8 @@ import SignIn from '~/pages/SignIn';
 jest.mock('@react-navigation/native');
 
 describe('SignIn page', () => {
-  const _id = faker.random.number();
-  const token = faker.random.uuid();
+  const _id = faker.datatype.number();
+  const token = faker.datatype.uuid();
   const apiMock = new MockAdapter(api);
 
   beforeEach(async () => {
