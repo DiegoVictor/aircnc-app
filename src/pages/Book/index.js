@@ -42,9 +42,7 @@ export default () => {
           minimumDate={addDays(new Date(), 1)}
           onChange={(_, selectedDate) => {
             setShowDatepicker(false);
-            if (selectedDate) {
-              setDate(selectedDate);
-            }
+            setDate(selectedDate);
           }}
         />
       )}
