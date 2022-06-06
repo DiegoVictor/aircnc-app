@@ -3,7 +3,7 @@ import { render, fireEvent, act } from 'react-native-testing-library';
 import { Alert } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import MockAdapter from 'axios-mock-adapter';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { create } from 'react-test-renderer';
 import { useNavigation, useRoute } from '@react-navigation/native';
 

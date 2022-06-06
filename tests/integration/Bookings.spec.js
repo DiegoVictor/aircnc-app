@@ -5,7 +5,7 @@ import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt-BR';
 import { Alert } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { create } from 'react-test-renderer';
 
 import { emit } from '../../mocks/socket.io-client';
