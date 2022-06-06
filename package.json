@@ -5,7 +5,7 @@
   "scripts": {
     "android": "yarn react-native run-android",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest --runInBand"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.8.0",
@@ -33,6 +33,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.2",
     "@babel/runtime": "^7.17.2",
+    "@faker-js/faker": "^7.2.0",
     "@react-native-community/eslint-config": "^3.0.1",
     "@testing-library/jest-native": "^4.0.4",
     "@types/jest": "^27.4.0",
@@ -48,7 +49,6 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "factory-girl": "^5.0.4",
-    "faker": "5.5.3",
     "jest": "^27.5.1",
     "metro-react-native-babel-preset": "^0.67.0",
     "mock-async-storage": "^2.2.0",
