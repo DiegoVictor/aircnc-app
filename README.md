@@ -1,5 +1,5 @@
 # [App] Aircnc
-![CircleCI](https://img.shields.io/circleci/build/github/DiegoVictor/aircnc-app?style=flat-square&logo=circleci)
+[![CircleCI](https://img.shields.io/circleci/build/github/DiegoVictor/aircnc-app?style=flat-square&logo=circleci)](https://app.circleci.com/pipelines/github/DiegoVictor/aircnc-app?branch=main)
 [![react-native](https://img.shields.io/badge/react--native-0.61.5-61dafb?style=flat-square&logo=react)](https://reactnative.dev/)
 [![styled-components](https://img.shields.io/badge/styled_components-5.2.1-db7b86?style=flat-square&logo=styled-components)](https://styled-components.com/)
 [![eslint](https://img.shields.io/badge/eslint-6.8.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
